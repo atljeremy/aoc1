@@ -20,11 +20,11 @@
 		3F0DF0B515992FD1001989B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F0DF0B715992FD1001989B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3F0DF0B915992FD1001989B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3F0DF0BD15992FD1001989B2 /* aoc1-Info.plist */ = {isa = PBXFileReference; path = "aoc1-Info.plist"; sourceTree = "<group>"; };
+		3F0DF0BD15992FD1001989B2 /* aoc1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "aoc1-Info.plist"; sourceTree = "<group>"; };
 		3F0DF0BF15992FD1001989B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F0DF0C115992FD1001989B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3F0DF0C315992FD1001989B2 /* aoc1-Prefix.pch */ = {isa = PBXFileReference; path = "aoc1-Prefix.pch"; sourceTree = "<group>"; };
-		3F0DF0C415992FD1001989B2 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F0DF0C315992FD1001989B2 /* aoc1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "aoc1-Prefix.pch"; sourceTree = "<group>"; };
+		3F0DF0C415992FD1001989B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F0DF0C515992FD1001989B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

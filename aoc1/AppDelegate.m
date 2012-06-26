@@ -15,9 +15,48 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //***************************************************************
+    // 1. Create a new Empty Application Project
+    //***************************************************************
+    
+    // Your looking at it! :)
+    
+    //***************************************************************
+    //2. Create a variable using the float data type. Cast the float
+    // to an int and using NSLog, output both the initial float value
+    // as well as the int value.
+    //***************************************************************
+    
+    float myFloat = 30.5f;
+    int   myInt   = (int) myFloat;
+    NSLog(@"My Original float: %f. My float being casted to and int: %i.", myFloat, myInt);
+    
+    //***************************************************************
+    //3. Perform an AND, OR comparison. Use float, int and BOOL types.
+    // BOOL values should be YES or NO and written in all caps.
+    //***************************************************************
+    
+    //***************************************************************
+    //4. Use an if, else if and else check using any of the data types
+    // of your choice.
+    //***************************************************************
+    
+    //***************************************************************
+    //5. Perform a single for loop printing out values to the console
+    //***************************************************************
+    
+    //***************************************************************
+    //6. Perform a nested loop printing out values to the console
+    //***************************************************************
+    
+    //***************************************************************
+    //7. Perform a while loop that increments an int variable and 
+    // outputs to the console.
+    //***************************************************************
+    
     return YES;
 }
 

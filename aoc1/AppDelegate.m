@@ -11,20 +11,10 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize rootView;
+@synthesize rootView , navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    //***************************************************************
-    // I did this so the app would stop complaing about not having a
-    // root view controller at the end of application launch.
-    //***************************************************************
-    rootView = [[UIViewController alloc] init];
-    self.window.rootViewController = rootView;
     
     //***************************************************************
     // 1. Create a new Empty Application Project
@@ -40,9 +30,9 @@
     
     float speed        = 46.68f;
     int   roundedSpeed = (int) speed;
-    int   speeLimit    = 40;
+    int   speedLimit    = 40;
     int   difference   = roundedSpeed - 40;
-    NSLog(@"I was riding my motorcyle the other day and was caught speeding. The officer who stopped me said that his radar had clicked me doing %f, in a %i MPH zone. He said that he would round that down to %i, but he would still have to write me a citation for traveling %i MPH over the speed limit.", speed, speeLimit, roundedSpeed, difference);
+    NSLog(@"I was riding my motorcyle the other day and was caught speeding. The officer who stopped me said that his radar had clicked me doing %f, in a %i MPH zone. He said that he would round that down to %i, but he would still have to write me a citation for traveling %i MPH over the speed limit.", speed, speedLimit, roundedSpeed, difference);
     
     //***************************************************************
     // 3. Perform an AND, OR comparison. Use float, int and BOOL types.
@@ -50,7 +40,7 @@
     //***************************************************************
     
     float mySpeed            = speed;     // just reusing value from #2
-    int   limit              = speeLimit; // just reusing value from #2
+    int   limit              = speedLimit; // just reusing value from #2
     BOOL  iWasGoingToFast    = YES;
     BOOL  iWasNotGoingToFast = NO;
     
@@ -83,6 +73,13 @@
     // 5. Perform a single for loop printing out values to the console
     //***************************************************************
     
+    int count = 10;
+    NSLog(@"The officer thought I was under the influence, so he made me count to %i...", count);
+    
+    for (int i=0; i<count; i++) {
+        NSLog(@"%i", i+1);
+    }
+    
     //***************************************************************
     // 6. Perform a nested loop printing out values to the console
     //***************************************************************
@@ -92,6 +89,23 @@
     // outputs to the console.
     //***************************************************************
     
+    
+    //***************************************************************
+    // Standard (boilerplate) code to create and load a new window
+    //
+    // I added a rootViewController so the app would stop complaing 
+    // about not having a root view controller at the end of 
+    // application launch.
+    //***************************************************************
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    rootView      = [[UIViewController alloc] init];
+    rootView.title = @"Jeremy Fox - AOC1";
+    navController = [[UINavigationController alloc] initWithRootViewController:rootView];
+    
+    self.window.rootViewController = navController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

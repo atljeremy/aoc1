@@ -11,6 +11,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize rootView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -19,41 +20,75 @@
     [self.window makeKeyAndVisible];
     
     //***************************************************************
+    // I did this so the app would stop complaing about not having a
+    // root view controller at the end of application launch.
+    //***************************************************************
+    rootView = [[UIViewController alloc] init];
+    self.window.rootViewController = rootView;
+    
+    //***************************************************************
     // 1. Create a new Empty Application Project
     //***************************************************************
     
     // Your looking at it! :)
     
     //***************************************************************
-    //2. Create a variable using the float data type. Cast the float
+    // 2. Create a variable using the float data type. Cast the float
     // to an int and using NSLog, output both the initial float value
     // as well as the int value.
     //***************************************************************
     
-    float myFloat = 30.5f;
-    int   myInt   = (int) myFloat;
-    NSLog(@"My Original float: %f. My float being casted to and int: %i.", myFloat, myInt);
+    float speed        = 46.68f;
+    int   roundedSpeed = (int) speed;
+    int   speeLimit    = 40;
+    int   difference   = roundedSpeed - 40;
+    NSLog(@"I was riding my motorcyle the other day and was caught speeding. The officer who stopped me said that his radar had clicked me doing %f, in a %i MPH zone. He said that he would round that down to %i, but he would still have to write me a citation for traveling %i MPH over the speed limit.", speed, speeLimit, roundedSpeed, difference);
     
     //***************************************************************
-    //3. Perform an AND, OR comparison. Use float, int and BOOL types.
+    // 3. Perform an AND, OR comparison. Use float, int and BOOL types.
     // BOOL values should be YES or NO and written in all caps.
     //***************************************************************
     
+    float mySpeed            = speed;     // just reusing value from #2
+    int   limit              = speeLimit; // just reusing value from #2
+    BOOL  iWasGoingToFast    = YES;
+    BOOL  iWasNotGoingToFast = NO;
+    
+    BOOL theCopWasRightForPullingMeOver = ((int) mySpeed > limit);
+    BOOL wasIReallyBeingACarefulDriver  = (iWasGoingToFast || iWasNotGoingToFast); // the OR operation
+    
+    // the AND operation
+    if(theCopWasRightForPullingMeOver && wasIReallyBeingACarefulDriver) {
+        NSLog(@"I wasn't happy about getting the ticket. But, I know I was going to fast.");
+    }
+    
     //***************************************************************
-    //4. Use an if, else if and else check using any of the data types
+    // 4. Use an if, else if and else check using any of the data types
     // of your choice.
     //***************************************************************
     
+    BOOL  iShouldAcceptTheTicket = YES;
+    BOOL  iShouldRunForTheBorder = NO;
+    float myTicketAmount         = 75.50f;
+    
+    if (iShouldAcceptTheTicket) {
+        NSLog(@"I decided to accept the ticket like a good person and go about my merry way.");
+    } else if(iShouldRunForTheBorder) {
+        NSLog(@"I decide there was no way I was accepting this ticket! I'm running for the border!");        
+    } else {
+        NSLog(@"After thinking about it, %f isn't really that much. I guess I'll just accept the ticket and pay it.", myTicketAmount);
+    }
+    
     //***************************************************************
-    //5. Perform a single for loop printing out values to the console
+    // 5. Perform a single for loop printing out values to the console
     //***************************************************************
     
     //***************************************************************
-    //6. Perform a nested loop printing out values to the console
+    // 6. Perform a nested loop printing out values to the console
     //***************************************************************
     
     //***************************************************************
-    //7. Perform a while loop that increments an int variable and 
+    // 7. Perform a while loop that increments an int variable and 
     // outputs to the console.
     //***************************************************************
     

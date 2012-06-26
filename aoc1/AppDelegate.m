@@ -84,10 +84,19 @@
     // 6. Perform a nested loop printing out values to the console
     //***************************************************************
     
+    NSSet *speeds = [NSSet setWithObjects:@"to fast", @"just right", @"to slow", nil];
+    for (NSString *currentSpeed in speeds) {
+        for (int i=0; i<speeds.count; i++) {
+            NSString *string = [[NSString alloc] initWithFormat:@"I was traveling %@" , currentSpeed];
+            NSLog(@"%@", string);
+        }
+    }
+    
     //***************************************************************
     // 7. Perform a while loop that increments an int variable and 
     // outputs to the console.
     //***************************************************************
+    
     
     
     //***************************************************************

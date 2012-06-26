@@ -84,11 +84,17 @@
     // 6. Perform a nested loop printing out values to the console
     //***************************************************************
     
-    NSSet *speeds = [NSSet setWithObjects:@"to fast", @"just right", @"to slow", nil];
+    NSArray *speeds           = [NSArray arrayWithObjects:@"to fast",
+                                                          @"the speed limit",
+                                                          @"to slow", nil];
+    NSArray *possibleOutcomes = [NSArray arrayWithObjects:@"I got a ticket as a result of going",
+                                                          @"If I had seen the speed limit and maintained my speed appropriately, my speed would have been",
+                                                          @"I can't stand when people drive", nil];
+    
     for (NSString *currentSpeed in speeds) {
-        for (int i=0; i<speeds.count; i++) {
-            NSString *string = [[NSString alloc] initWithFormat:@"I was traveling %@" , currentSpeed];
-            NSLog(@"%@", string);
+        for (int i=0; i<possibleOutcomes.count; i++) {
+            NSString *currentOutcome = [possibleOutcomes objectAtIndex:i];
+            NSLog(@"%@ %@", currentOutcome, currentSpeed);
         }
     }
     

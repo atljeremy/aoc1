@@ -20,7 +20,7 @@
     // 1. Create a new Empty Application Project
     //***************************************************************
     
-    // Your looking at it! :)
+    // You're looking at it! :)
     
     //***************************************************************
     // 2. Create a variable using the float data type. Cast the float
@@ -103,7 +103,20 @@
     // outputs to the console.
     //***************************************************************
     
+    int  iGotAnotherTicket      = 1;
+    int  numberOfTickets        = 5;
+    BOOL iAmGoingToKeepSpeeding = YES;
     
+    while (iAmGoingToKeepSpeeding) {
+        
+        NSLog(@"Oh no! I just got another ticket. That makes %i this week!", iGotAnotherTicket);
+        
+        if (iGotAnotherTicket == numberOfTickets) {
+            iAmGoingToKeepSpeeding = NO;
+            NSLog(@"Ok, I've learned me lesson. I'm never speeding again!");
+        }
+        iGotAnotherTicket++;
+    }
     
     //***************************************************************
     // Standard (boilerplate) code to create and load a new window

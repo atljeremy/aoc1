@@ -152,7 +152,7 @@
     NSMutableString *listOfItems = [[NSMutableString alloc] init];
     for (int i=0; i<arrayItems.count; i++) {
         NSString *item = [arrayItems objectAtIndex:i];
-        if (arrayItems.count == i) {
+        if (arrayItems.count == i+1) {
             [listOfItems appendString:item];
         } else {
             [listOfItems appendString:[[NSString alloc] initWithFormat:@"%@, ", item]];

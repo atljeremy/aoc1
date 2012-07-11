@@ -21,7 +21,9 @@
     //
     //###############################################################
     
-    //Change the background color of the view to any color you wish.
+    //***************************************************************
+    // 1. Change the background color of the view to any color you wish.
+    //***************************************************************
     self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     rootView                    = [[UIViewController alloc] init];
@@ -29,8 +31,9 @@
     navController               = [[UINavigationController alloc] initWithRootViewController:rootView];
     self.window.rootViewController = navController;
     
-    
+    //***************************************************************
     // CGFloat's used for sizing labels
+    //***************************************************************
     fullWidth = rootView.view.bounds.size.width;
     leftWidth = fullWidth / 3;
     rightWidth = (fullWidth - leftWidth) - 10;
@@ -40,7 +43,7 @@
     //***************************************************************
     
     //***************************************************************
-    // Create a UILabel and place it at the top of the view. This is 
+    // 1. Create a UILabel and place it at the top of the view. This is 
     // used as the title of the book. Center the text for this label.
     //***************************************************************
     UILabel *title        = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, fullWidth, 30)];
@@ -52,7 +55,7 @@
     [rootView.view addSubview:title];
     
     //***************************************************************
-    // Create another label that contains the text "Author:" with the 
+    // 2. Create another label that contains the text "Author:" with the 
     // text right justified.
     //***************************************************************
     UILabel *author        = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, leftWidth, 25)];
@@ -64,7 +67,7 @@
     [rootView.view addSubview:author];
     
     //***************************************************************
-    // Create a UILabel to the right of the author title label and 
+    // 3. Create a UILabel to the right of the author title label and 
     // have it contain the name of the author of the book you chose. 
     // This text will be left justified.
     //***************************************************************
@@ -77,7 +80,7 @@
     [rootView.view addSubview:danBrwon];
     
     //***************************************************************
-    // Create a UILabel on the next line called "Published:". This 
+    // 4. Create a UILabel on the next line called "Published:". This 
     // text is right justified.
     //***************************************************************
     UILabel *published        = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, leftWidth, 25)];
@@ -89,7 +92,7 @@
     [rootView.view addSubview:published];
     
     //***************************************************************
-    // Create a label next to the Published label and add the text of
+    // 5. Create a label next to the Published label and add the text of
     // when the book was published. This text is left justified.
     //***************************************************************
     UILabel *date        = [[UILabel alloc] initWithFrame:CGRectMake(leftWidth + 10, 100, rightWidth, 25)];
@@ -101,7 +104,7 @@
     [rootView.view addSubview:date];
     
     //***************************************************************
-    // Create a UILabel with the text "Summary". This text is left
+    // 6. Create a UILabel with the text "Summary". This text is left
     // justified.
     //***************************************************************
     UILabel *summary        = [[UILabel alloc] initWithFrame:CGRectMake(0, 135, leftWidth, 25)];
@@ -113,7 +116,7 @@
     [rootView.view addSubview:summary];
 
     //***************************************************************
-    // Create another UILabel that contains a small summary of the 
+    // 7. Create another UILabel that contains a small summary of the 
     // book's plot. This text is centered and should span multiple lines.
     //***************************************************************
     UILabel *desc        = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, fullWidth, 120)];
@@ -133,7 +136,7 @@
     //***************************************************************
     
     //***************************************************************
-    // Create an NSArray of 5 items talked about in the book. These
+    // 1. Create an NSArray of 5 items talked about in the book. These
     // items will be NSStrings. Add the items to the array.
     //***************************************************************
     NSArray *arrayItems = [[NSArray alloc] initWithObjects:@"Leonardo Da Vinci", 
@@ -143,7 +146,7 @@
                                                            @"The Louvre", nil];
     
     //***************************************************************
-    // Create a variable of type NSMutableString and allocate it. 
+    // 2. Create a variable of type NSMutableString and allocate it. 
     // Loop through the NSArray you created and append each of these
     // items to your NSMutableString separated by commas. 
     // (For example: dinosaurs, jeeps, storm, giant turkeys, 
@@ -160,7 +163,7 @@
     }
     
     //***************************************************************
-    // Create a label with the text "List of items" and add it to the
+    // 3. Create a label with the text "List of items" and add it to the
     // parent view. Make sure the text is left justified.
     //***************************************************************
     UILabel *items        = [[UILabel alloc] initWithFrame:CGRectMake(0, 290, leftWidth, 25)];
@@ -172,7 +175,7 @@
     [rootView.view addSubview:items];
     
     //***************************************************************
-    // Create another label beneath and set the text to the 
+    // 4. Create another label beneath and set the text to the 
     // NSMutableString text. Increase the number of lines if 
     // necessary. Make sure the text in this label is centered
     //***************************************************************

@@ -116,13 +116,15 @@
     // Create another UILabel that contains a small summary of the 
     // book's plot. This text is centered and should span multiple lines.
     //***************************************************************
-    UILabel *desc        = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, fullWidth, 100)];
-    desc.text            = @"Author:";
+    UILabel *desc        = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, fullWidth, 120)];
+    desc.text            = @"Symbologist Robert Langdon and French cryptologist Sophie Neveu investigate the bizarre murder of the curator of the Louvre to discover a trail of clues hidden in the works of Leonardo da Vinci which would eventually unveil an unbelievable secret.";
     desc.textColor       = [UIColor orangeColor];
     desc.backgroundColor = [UIColor groupTableViewBackgroundColor];
     desc.shadowColor     = [UIColor darkTextColor];
     desc.shadowOffset    = CGSizeMake(1, 1);
-    desc.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    desc.font            = [UIFont fontWithName:@"Helvetica" size:15.0];
+    desc.lineBreakMode   = UILineBreakModeWordWrap;
+    desc.numberOfLines   = 6;
     desc.textAlignment   = UITextAlignmentCenter;
     [rootView.view addSubview:desc];
     
@@ -134,6 +136,11 @@
     // Create an NSArray of 5 items talked about in the book. These
     // items will be NSStrings. Add the items to the array.
     //***************************************************************
+    NSArray *arrayItems = [[NSArray alloc] initWithObjects:@"Leonardo Da Vinci", 
+                                                           @"Religion", 
+                                                           @"Priory of Sion", 
+                                                           @"Knights of Templar",
+                                                           @"The Louvre", nil];
     
     //***************************************************************
     // Create a variable of type NSMutableString and allocate it. 
@@ -142,12 +149,21 @@
     // (For example: dinosaurs, jeeps, storm, giant turkeys, 
     // eating people)
     //***************************************************************
+    NSMutableString *listOfItems = [[NSMutableString alloc] init];
+    for (int i=0; i<arrayItems.count; i++) {
+        NSString *item = [arrayItems objectAtIndex:i];
+        if (arrayItems.count == i) {
+            [listOfItems appendString:item];
+        } else {
+            [listOfItems appendString:[[NSString alloc] initWithFormat:@"%@, ", item]];
+        }
+    }
     
     //***************************************************************
     // Create a label with the text "List of items" and add it to the
     // parent view. Make sure the text is left justified.
     //***************************************************************
-    UILabel *items        = [[UILabel alloc] initWithFrame:CGRectMake(0, 270, leftWidth, 25)];
+    UILabel *items        = [[UILabel alloc] initWithFrame:CGRectMake(0, 290, leftWidth, 25)];
     items.text            = @"List of items:";
     items.textColor       = [UIColor magentaColor];
     items.backgroundColor = [UIColor whiteColor];
@@ -160,12 +176,14 @@
     // NSMutableString text. Increase the number of lines if 
     // necessary. Make sure the text in this label is centered
     //***************************************************************
-    UILabel *itemsList        = [[UILabel alloc] initWithFrame:CGRectMake(0, 295, fullWidth, 65)];
-    itemsList.text            = @"Author:";
+    UILabel *itemsList        = [[UILabel alloc] initWithFrame:CGRectMake(0, 315, fullWidth, 65)];
+    itemsList.text            = listOfItems;
     itemsList.textColor       = [UIColor darkTextColor];
     itemsList.backgroundColor = [UIColor underPageBackgroundColor];
-    itemsList.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    itemsList.font            = [UIFont fontWithName:@"Helvetica" size:15.0];
     itemsList.textAlignment   = UITextAlignmentCenter;
+    itemsList.lineBreakMode   = UILineBreakModeWordWrap;
+    itemsList.numberOfLines   = 2;
     [rootView.view addSubview:itemsList];
     
     //###############################################################

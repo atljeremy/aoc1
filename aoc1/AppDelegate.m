@@ -15,6 +15,172 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //###############################################################
+    //
+    // START WEEK TWO ACTIVITY CODE
+    //
+    //###############################################################
+    
+    //Change the background color of the view to any color you wish.
+    self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+    rootView                    = [[UIViewController alloc] init];
+    rootView.title              = @"Jeremy Fox - AOC1";
+    navController               = [[UINavigationController alloc] initWithRootViewController:rootView];
+    self.window.rootViewController = navController;
+    
+    
+    // CGFloat's used for sizing labels
+    fullWidth = rootView.view.bounds.size.width;
+    leftWidth = fullWidth / 3;
+    rightWidth = (fullWidth - leftWidth) - 10;
+    
+    //***************************************************************
+    // Book Information and UILabels
+    //***************************************************************
+    
+    //***************************************************************
+    // Create a UILabel and place it at the top of the view. This is 
+    // used as the title of the book. Center the text for this label.
+    //***************************************************************
+    UILabel *title        = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, fullWidth, 30)];
+    title.text            = @"The DaVinci Code";
+    title.textColor       = [UIColor whiteColor];
+    title.backgroundColor = [UIColor blueColor];
+    title.font            = [UIFont fontWithName:@"Helvetica" size:20.0];
+    title.textAlignment   = UITextAlignmentCenter;
+    [rootView.view addSubview:title];
+    
+    //***************************************************************
+    // Create another label that contains the text "Author:" with the 
+    // text right justified.
+    //***************************************************************
+    UILabel *author        = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, leftWidth, 25)];
+    author.text            = @"Author:";
+    author.textColor       = [UIColor redColor];
+    author.backgroundColor = [UIColor greenColor];
+    author.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    author.textAlignment   = UITextAlignmentRight;
+    [rootView.view addSubview:author];
+    
+    //***************************************************************
+    // Create a UILabel to the right of the author title label and 
+    // have it contain the name of the author of the book you chose. 
+    // This text will be left justified.
+    //***************************************************************
+    UILabel *danBrwon        = [[UILabel alloc] initWithFrame:CGRectMake(leftWidth + 10, 70, rightWidth, 25)];
+    danBrwon.text            = @"Dan Brown";
+    danBrwon.textColor       = [UIColor greenColor];
+    danBrwon.backgroundColor = [UIColor darkGrayColor];
+    danBrwon.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    danBrwon.textAlignment   = UITextAlignmentLeft;
+    [rootView.view addSubview:danBrwon];
+    
+    //***************************************************************
+    // Create a UILabel on the next line called "Published:". This 
+    // text is right justified.
+    //***************************************************************
+    UILabel *published        = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, leftWidth, 25)];
+    published.text            = @"Published:";
+    published.textColor       = [UIColor purpleColor];
+    published.backgroundColor = [UIColor yellowColor];
+    published.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    published.textAlignment   = UITextAlignmentRight;
+    [rootView.view addSubview:published];
+    
+    //***************************************************************
+    // Create a label next to the Published label and add the text of
+    // when the book was published. This text is left justified.
+    //***************************************************************
+    UILabel *date        = [[UILabel alloc] initWithFrame:CGRectMake(leftWidth + 10, 100, rightWidth, 25)];
+    date.text            = @"March 28th, 2006";
+    date.textColor       = [UIColor cyanColor];
+    date.backgroundColor = [UIColor blackColor];
+    date.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    date.textAlignment   = UITextAlignmentLeft;
+    [rootView.view addSubview:date];
+    
+    //***************************************************************
+    // Create a UILabel with the text "Summary". This text is left
+    // justified.
+    //***************************************************************
+    UILabel *summary        = [[UILabel alloc] initWithFrame:CGRectMake(0, 135, leftWidth, 25)];
+    summary.text            = @"Summary:";
+    summary.textColor       = [UIColor blackColor];
+    summary.backgroundColor = [UIColor lightGrayColor];
+    summary.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    summary.textAlignment   = UITextAlignmentLeft;
+    [rootView.view addSubview:summary];
+
+    //***************************************************************
+    // Create another UILabel that contains a small summary of the 
+    // book's plot. This text is centered and should span multiple lines.
+    //***************************************************************
+    UILabel *desc        = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, fullWidth, 100)];
+    desc.text            = @"Author:";
+    desc.textColor       = [UIColor orangeColor];
+    desc.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    desc.shadowColor     = [UIColor darkTextColor];
+    desc.shadowOffset    = CGSizeMake(1, 1);
+    desc.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    desc.textAlignment   = UITextAlignmentCenter;
+    [rootView.view addSubview:desc];
+    
+    //***************************************************************
+    // Labels and Arrays
+    //***************************************************************
+    
+    //***************************************************************
+    // Create an NSArray of 5 items talked about in the book. These
+    // items will be NSStrings. Add the items to the array.
+    //***************************************************************
+    
+    //***************************************************************
+    // Create a variable of type NSMutableString and allocate it. 
+    // Loop through the NSArray you created and append each of these
+    // items to your NSMutableString separated by commas. 
+    // (For example: dinosaurs, jeeps, storm, giant turkeys, 
+    // eating people)
+    //***************************************************************
+    
+    //***************************************************************
+    // Create a label with the text "List of items" and add it to the
+    // parent view. Make sure the text is left justified.
+    //***************************************************************
+    UILabel *items        = [[UILabel alloc] initWithFrame:CGRectMake(0, 270, leftWidth, 25)];
+    items.text            = @"List of items:";
+    items.textColor       = [UIColor magentaColor];
+    items.backgroundColor = [UIColor whiteColor];
+    items.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    items.textAlignment   = UITextAlignmentRight;
+    [rootView.view addSubview:items];
+    
+    //***************************************************************
+    // Create another label beneath and set the text to the 
+    // NSMutableString text. Increase the number of lines if 
+    // necessary. Make sure the text in this label is centered
+    //***************************************************************
+    UILabel *itemsList        = [[UILabel alloc] initWithFrame:CGRectMake(0, 295, fullWidth, 65)];
+    itemsList.text            = @"Author:";
+    itemsList.textColor       = [UIColor darkTextColor];
+    itemsList.backgroundColor = [UIColor underPageBackgroundColor];
+    itemsList.font            = [UIFont fontWithName:@"Helvetica" size:18.0];
+    itemsList.textAlignment   = UITextAlignmentCenter;
+    [rootView.view addSubview:itemsList];
+    
+    //###############################################################
+    //
+    // END WEEK TWO ACTIVITY CODE
+    //
+    //###############################################################
+    
+    
+    
+    //###############################################################
+    //
+    // START WEEK ONE ACTIVITY CODE
+    //
+    //###############################################################
     
     //***************************************************************
     // 1. Create a new Empty Application Project
@@ -118,38 +284,12 @@
         iGotAnotherTicket++;
     }
     
-    //Change the background color of the view to any color you wish.
-    
-    // Book Information and UILabels
-    // Create a UILabel and place it at the top of the view. This is used as the title of the book. Center the text for this label.
-    // Create another label that contains the text "Author:" with the text right justified.
-    // Create a UILabel to the right of the author title label and have it contain the name of the author of the book you chose. This text will be left justified.
-    // Create a UILabel on the next line called "Published:". This text is right justified.
-    // Create a label next to the Published label and add the text of when the book was published. This text is left justified.
-    // Create a UILabel with the text "Summary". This text is left justified.
-    // Create another UILabel that contains a small summary of the book's plot. This text is centered and should span multiple lines.
-    
-    // Labels and Arrays
-    // Create an NSArray of 5 items talked about in the book. These items will be NSStrings. Add the items to the array.
-    // Create a variable of type NSMutableString and allocate it. Loop through the NSArray you created and append each of these items to your NSMutableString separated by commas. (For example: dinosaurs, jeeps, storm, giant turkeys, eating people)
-    // Create a label with the text "List of items" and add it to the parent view. Make sure the text is left justified.
-    // Create another label beneath and set the text to the NSMutableString text. Increase the number of lines if necessary. Make sure the text in this label is centered
-    
     //***************************************************************
-    // Standard (boilerplate) code to create and load a new window
     //
-    // I added a rootViewController so the app would stop complaining 
-    // about not having a root view controller at the end of 
-    // application launch.
+    // END WEEK ONE ACTIVITY CODE
+    //
     //***************************************************************
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor brownColor];
     
-    rootView       = [[UIViewController alloc] init];
-    rootView.title = @"Jeremy Fox - AOC1";
-    navController  = [[UINavigationController alloc] initWithRootViewController:rootView];
-    
-    self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     return YES;
 }

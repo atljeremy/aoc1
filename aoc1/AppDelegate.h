@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    CGFloat fullWidth;
+    CGFloat leftWidth;
+    CGFloat rightWidth;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIViewController *rootView;

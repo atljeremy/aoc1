@@ -14,10 +14,13 @@
 
 @implementation ViewController
 
+# pragma mark - View Life Cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.view.backgroundColor = [UIColor blackColor];
+    
     //*****************************************************************************
     // 4. Call the Append function with two NSStrings. Capture the result and
     // display a UIAlertView with the appended string using displayAlertWithString.
@@ -30,7 +33,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -40,8 +42,9 @@
 
 # pragma mark - AOC Project 3 Custom Methods
 
-- (void)add
-{
+// This is just a local container method used by the UIAlertViewDelegate method
+// The real "add" method is contained within
+- (void)add {
     //*****************************************************************************
     // 6. Call the Add function passing in two integer values. Capture the return
     // of this function into a variable.
@@ -62,6 +65,8 @@
     [self displayAlertWithString:numberMessage title:@"Added Numbers" withTag:1];
 }
 
+// This is just a local container method used by the UIAlertViewDelegate method
+// The real "compare" method is contained within
 - (void)compare {
     //*****************************************************************************
     // 9. Call the Compare function with two integer values. If Compare returns true,
@@ -70,11 +75,31 @@
     //*****************************************************************************
     NSInteger one = 5;
     NSInteger two = 5;
-    BOOL compared = [self compare:one withNumber:two];
-    if (compared) {
-        NSString *message = [NSString stringWithFormat:@"First number was: %d. Second number was: %d. The result is: %d.", one, two, compared];
+    BOOL comparedValue = [self compare:one withNumber:two];
+    if (comparedValue) {
+        NSString *message = [NSString stringWithFormat:@"First number was: %d. Second number was: %d. The BOOL value is: %d.", one, two, comparedValue];
         [self displayAlertWithString:message title:@"Compared Numbers" withTag:2];
     }
+}
+
+- (void)theEnd {
+    UIImage *image = [UIImage imageNamed:@"the_end.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    
+    CGFloat x = 0;
+    CGFloat y = 100;
+    CGFloat w = self.view.frame.size.width;
+    CGFloat h = self.view.frame.size.width - 80;
+    
+    imageView.frame = CGRectMake(x, y, w, h);
+    
+    imageView.alpha = 0;
+
+    [self.view addSubview:imageView];
+    
+    [UIView animateWithDuration:2.0 animations:^{
+        imageView.alpha = 1.0;
+    }];
 }
 
 //*****************************************************************************
@@ -141,6 +166,7 @@
             break;
             
         default:
+            [self theEnd];
             break;
     }
 }

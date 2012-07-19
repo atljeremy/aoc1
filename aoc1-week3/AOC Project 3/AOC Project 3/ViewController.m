@@ -20,6 +20,11 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     //*****************************************************************************
     // 4. Call the Append function with two NSStrings. Capture the result and
@@ -28,6 +33,7 @@
     NSString *stringOne = @"Hello, ";
     NSString *stringTwo = @"Jeremy Fox!";
     [self displayAlertWithString:[self append:stringOne withString:stringTwo] title:@"Appened Strings" withTag:0];
+    
 }
 
 - (void)didReceiveMemoryWarning

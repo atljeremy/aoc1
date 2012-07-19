@@ -15,6 +15,7 @@
 		3F6DA49915B6DC090016BCA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DA49815B6DC090016BCA7 /* AppDelegate.m */; };
 		3F6DA49C15B6DC090016BCA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DA49B15B6DC090016BCA7 /* ViewController.m */; };
 		3F6DA49F15B6DC0A0016BCA7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F6DA49D15B6DC090016BCA7 /* ViewController.xib */; };
+		3FCA24C415B77483008EA638 /* the_end.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FCA24C315B77483008EA638 /* the_end.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3F6DA49A15B6DC090016BCA7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3F6DA49B15B6DC090016BCA7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F6DA49E15B6DC0A0016BCA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		3FCA24C315B77483008EA638 /* the_end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = the_end.png; path = images/the_end.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		3F6DA48E15B6DC090016BCA7 /* AOC Project 3 */ = {
 			isa = PBXGroup;
 			children = (
+				3FCA24C315B77483008EA638 /* the_end.png */,
 				3F6DA49715B6DC090016BCA7 /* AppDelegate.h */,
 				3F6DA49815B6DC090016BCA7 /* AppDelegate.m */,
 				3F6DA49A15B6DC090016BCA7 /* ViewController.h */,
@@ -151,6 +154,7 @@
 			files = (
 				3F6DA49315B6DC090016BCA7 /* InfoPlist.strings in Resources */,
 				3F6DA49F15B6DC0A0016BCA7 /* ViewController.xib in Resources */,
+				3FCA24C415B77483008EA638 /* the_end.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +244,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AOC Project 3/AOC Project 3-Prefix.pch";
 				INFOPLIST_FILE = "AOC Project 3/AOC Project 3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -251,6 +256,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AOC Project 3/AOC Project 3-Prefix.pch";
 				INFOPLIST_FILE = "AOC Project 3/AOC Project 3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +281,7 @@
 				3F6DA4A415B6DC0A0016BCA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

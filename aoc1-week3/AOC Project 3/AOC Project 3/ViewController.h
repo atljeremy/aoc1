@@ -11,8 +11,8 @@
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 
 - (NSNumber *)add:(NSInteger)numberOne withNumber:(NSInteger)numberTwo;
-- (BOOL)compare:(NSInteger)numberOne withNumber:(NSInteger)numberTwo;
 - (NSString *)append:(NSString *)stringOne withString:(NSString *)stringTwo;
-- (void)displayAlertWithString:(NSString *)message andTitle:(NSString *)title withTag:(NSInteger)tag;
+- (BOOL)compare:(NSInteger)numberOne withNumber:(NSInteger)numberTwo;
+- (void)displayAlertWithString:(NSString *)message title:(NSString *)title withTag:(NSInteger)tag;
 
 @end

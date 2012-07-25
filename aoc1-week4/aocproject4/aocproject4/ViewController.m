@@ -58,14 +58,7 @@ const int kInfoButton    = 3;
     switch ([sender tag]) {
         case kLoginButton:
             
-            if (usernameTextField.text.length > 0) {
-                [usernameTextField resignFirstResponder];
-                NSString *loggedInLabel = [NSString stringWithFormat:@"User: %@ has been logged in", usernameTextField.text, nil];
-                loginTextLabel.text = loggedInLabel;
-            } else {
-                [usernameTextField resignFirstResponder];
-                loginTextLabel.text = @"Username cannot be empty";
-            }
+            [self performLogin];
             break;
             
         case kShowDateButton:
@@ -91,6 +84,17 @@ const int kInfoButton    = 3;
             
         default:
             break;
+    }
+}
+
+- (void)performLogin {
+    if (usernameTextField.text.length > 0) {
+        [usernameTextField resignFirstResponder];
+        NSString *loggedInLabel = [NSString stringWithFormat:@"User: %@ has been logged in", usernameTextField.text, nil];
+        loginTextLabel.text = loggedInLabel;
+    } else {
+        [usernameTextField resignFirstResponder];
+        loginTextLabel.text = @"Username cannot be empty";
     }
 }
 

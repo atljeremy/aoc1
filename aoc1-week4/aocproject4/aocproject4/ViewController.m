@@ -68,17 +68,7 @@ const int kInfoButton    = 3;
             
         case kInfoButton:
             
-            if (showInfoText) {
-                showInfoText = NO;
-                [UIView animateWithDuration:0.5 animations:^{
-                    infoTextLabel.alpha = 1.0;
-                }];
-            } else {
-                showInfoText = YES;
-                [UIView animateWithDuration:0.5 animations:^{
-                    infoTextLabel.alpha = 0.0;
-                }];
-            }
+            [self showAppInfo];
             
             break;
             
@@ -89,10 +79,19 @@ const int kInfoButton    = 3;
 
 - (void)performLogin {
     if (usernameTextField.text.length > 0) {
+        
+        // ********************************************************************
+        // Otherwise, display "User: username has been logged in".
+        // ********************************************************************
         [usernameTextField resignFirstResponder];
         NSString *loggedInLabel = [NSString stringWithFormat:@"User: %@ has been logged in", usernameTextField.text, nil];
         loginTextLabel.text = loggedInLabel;
     } else {
+        
+        // ********************************************************************
+        // If the user has not entered any text into the UITextField, display 
+        // in the UILabel, "Username cannot be empty".
+        // ********************************************************************
         [usernameTextField resignFirstResponder];
         loginTextLabel.text = @"Username cannot be empty";
     }
@@ -116,6 +115,20 @@ const int kInfoButton    = 3;
                                            otherButtonTitles:nil];
     
     [alert show];
+}
+
+- (void)showAppInfo {
+    if (showInfoText) {
+        showInfoText = NO;
+        [UIView animateWithDuration:0.5 animations:^{
+            infoTextLabel.alpha = 1.0;
+        }];
+    } else {
+        showInfoText = YES;
+        [UIView animateWithDuration:0.5 animations:^{
+            infoTextLabel.alpha = 0.0;
+        }];
+    }
 }
 
 @end

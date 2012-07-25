@@ -125,6 +125,11 @@ const int kInfoButton    = 3;
 }
 
 - (void)showAppInfo {
+    // ********************************************************************
+    // When the button is pressed, have the text "This application was 
+    // created by: Firstname Lastname" appear in the info UILabel. Please 
+    // replace firstname lastname with your name.
+    // ********************************************************************
     if (showInfoText) {
         showInfoText = NO;
         [UIView animateWithDuration:0.5 animations:^{

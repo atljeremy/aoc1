@@ -98,6 +98,13 @@ const int kInfoButton    = 3;
 }
 
 - (void)showDateAlert {
+    // ********************************************************************
+    // Display a UIAlertView with the current date and time displayed in 
+    // the format seen in the dateAlert graphic in the assets section of 
+    // this project assignment. You can either format the date and time 
+    // manually or use the date and time styles. You must use an NSDate 
+    // object to gather the date and time information.
+    // ********************************************************************
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MMMM d, yyyy"];
     
